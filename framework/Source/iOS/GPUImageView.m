@@ -232,12 +232,9 @@
 
 - (void)recalculateViewGeometry;
 {
+    CGSize currentViewSize = self.bounds.size;
     runSynchronouslyOnVideoProcessingQueue(^{
         CGFloat heightScaling, widthScaling;
-        
-        runOnMainQueueWithoutDeadlocking(^{
-            currentBounds = self.bounds;
-        });
         
         //    CGFloat imageAspectRatio = inputImageSize.width / inputImageSize.height;
         //    CGFloat viewAspectRatio = currentViewSize.width / currentViewSize.height;
